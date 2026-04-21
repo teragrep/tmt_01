@@ -523,6 +523,33 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.9.4.1</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <effort>Max</effort>
+          <failThreshold>Low</failThreshold>
+          <failOnError>true</failOnError>
+          <includeTests>true</includeTests>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>1.14.0</version>
+            </plugin>
+          </plugins>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>test</phase>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <profiles>
